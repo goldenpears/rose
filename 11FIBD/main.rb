@@ -1,7 +1,27 @@
-x, y = 6, 3
-output = 4
+# Fn = Fn-1 + Fn-2 - Fn-(m+1)
+
+n, m   = 84, 18
+
+def f(n, m)
+  x = [1, 1]
+  (2..n-1).each do |i|
+    if i < m
+      x << (x[-1] + x[-2])
+    elsif i == m
+      x << (x[-1] + x[-2] - 1)
+    else
+      x << (x[-1] + x[-2] - ( x[-(m+1)] ))
+    end  
+  end
+  x.last
+end
+
+puts f(n, m)
 
 # Attempts which doesn't work
+# Left for a historical purpose
+
+# Fn = Fn-1 + Fn-2 - Fn/m
 
 # def mortal_rabbit(period, death)
 #   return 0 if period == 0
@@ -24,10 +44,3 @@ output = 4
 #   end
 #   x
 # end
-
-def f(n, m)
-  # hint: dynamic programming
-end
-
-puts f(x, y)
-puts f(x, y).last == output
