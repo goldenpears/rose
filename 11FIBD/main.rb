@@ -18,8 +18,8 @@ end
 
 puts f(n, m)
 
-# Attempts which doesn't work
-# Left for a historical purpose
+# Attempts which don't work
+# and left for a historical purpose
 
 # Fn = Fn-1 + Fn-2 - Fn/m
 
